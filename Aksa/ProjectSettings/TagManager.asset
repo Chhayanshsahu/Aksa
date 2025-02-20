@@ -4,8 +4,12 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - Door
-  - LockedDoor
+  - okk
+  - keys
+  - enemy
+  - prince
+  - Torch
+  - Item
   layers:
   - Default
   - TransparentFX
