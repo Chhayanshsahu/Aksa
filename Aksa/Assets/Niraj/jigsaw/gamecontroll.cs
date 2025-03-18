@@ -10,6 +10,8 @@ public class GameController : MonoBehaviour
     private Transform[] Images; // Array of transforms to check for rotation
     [SerializeField]
     private GameObject winText; // Reference to the win text GameObject
+    [SerializeField]
+    private GameObject winPanel; // Reference to the win panel GameObject
     public static bool youWin; // Static flag to track win state
 
     void Start()
@@ -18,8 +20,9 @@ public class GameController : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
-        // Deactivate the win text at the start of the game
+        // Deactivate the win text and panel at the start of the game
         winText.SetActive(false);
+        winPanel.SetActive(false);
 
         // Reset the win state
         youWin = false;
@@ -55,11 +58,12 @@ public class GameController : MonoBehaviour
 
     private IEnumerator WinSequence()
     {
-        // Wait for 2 seconds before showing the win text
+        // Wait for 2 seconds before showing the win text and panel
         yield return new WaitForSeconds(2f);
 
-        // Activate the win text GameObject
+        // Activate the win text and panel GameObjects
         winText.SetActive(true);
+        winPanel.SetActive(true);
 
         // Destroy the specified object (if any)
         if (_object != null)
