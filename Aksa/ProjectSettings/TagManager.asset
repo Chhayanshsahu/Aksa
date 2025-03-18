@@ -10,6 +10,8 @@ TagManager:
   - prince
   - Torch
   - Item
+  - Door
+  - LockedDoor
   layers:
   - Default
   - TransparentFX
